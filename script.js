@@ -11,7 +11,7 @@ var url = window.location.href;
 let weather = {
 	'apikey':'7c2bae92cf2d9eabfcfa57b500ba48a8',
 	fetchWeather: function(city){
-		fetch('http://api.openweathermap.org/data/2.5/weather?q='
+		fetch('https://api.openweathermap.org/data/2.5/weather?q='
 		 + city + 
 		 '&units=metric&APPID=7c2bae92cf2d9eabfcfa57b500ba48a8')
 		.then(response => response.json())

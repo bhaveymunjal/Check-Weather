@@ -1,13 +1,3 @@
-var url = window.location.href;
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404)
-            return true;
-        else
-            return false;
-    }
 let weather = {
 	'apikey':'7c2bae92cf2d9eabfcfa57b500ba48a8',
 	fetchWeather: function(city){

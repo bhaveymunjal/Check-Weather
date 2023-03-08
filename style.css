@@ -52,9 +52,11 @@ button:hover{
 }
 .image_off, button:hover .image_on{
     display:none;
+    width: 35px;
 }
- .image_on, button:hover .image_off{
+.image_on, button:hover .image_off{
     display:block;
+    width: 35px;
 }
 .weather{
     display: none;

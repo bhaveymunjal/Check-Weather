@@ -1,13 +1,3 @@
-var url = window.location.href;
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404)
-            return true;
-        else
-            return false;
-    }
 let weather = {
 	'apikey':'7c2bae92cf2d9eabfcfa57b500ba48a8',
 	fetchWeather: function(city){
@@ -48,13 +38,22 @@ let weather = {
 		document.querySelector('.weather').style.display="none"
 	}
 }
-let city_name = document.getElementById('city_name').value;
+let city_name = document.getElementById('city_name');
 let searchweather = document.getElementById('searchweather');
 searchweather.addEventListener('click',function(){
-	city_name = document.getElementById('city_name').value;
-	if(city_name =="")
+	let cityName = document.getElementById('city_name').value;
+	if(cityName =="")
 		alert('Please Enter a City Name');
 	else{
-		weather.fetchWeather(city_name)
+		weather.fetchWeather(cityName)
+	}
+})
+city_name.addEventListener('keyup',function(event){
+	let cityName = document.getElementById('city_name').value;
+	if(event.key=="Enter"){
+		if(cityName =="")
+			alert('Please Enter a City Name');
+		else
+			weather.fetchWeather(cityName)
 	}
 })

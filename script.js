@@ -57,3 +57,28 @@ city_name.addEventListener('keyup',function(event){
 			weather.fetchWeather(cityName)
 	}
 })
+
+if (window.addEventListener) {
+	window.addEventListener("load", theFooter);
+  } else if (window.attachEvent) {
+	window.attachEvent("onload", theFooter);
+  }
+  
+  function theFooter() {
+	var div = document.createElement("div");
+	// div.className = "footer";
+	div.style.background = "black";
+	div.style.padding = "10px";
+	div.style.margin = "0px";
+	// div.style.width = "100vw";
+	div.style.right= "0px";
+	div.style.bottom = "0px";
+	div.style.left = "0px";
+	div.style.overflow = "hidden";
+	div.style.position = "absolute";
+	div.style.textAlign = "center";
+	div.style.color = "LightGrey";
+	div.innerHTML =
+	  "Copyright &copy; Bhavey Munjal" ;
+	document.body.appendChild(div);
+  }
